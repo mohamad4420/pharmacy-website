@@ -1,0 +1,23 @@
+body{
+   background: -webkit-linear-gradient(left, #3931af, #00c6ff);  
+
+}
+#ph{
+    color: #ec1c23;
+}
+#per{
+    color: #08526d;
+    font-weight: bold;
+}
+.upper-bar{
+    background-color: #08526d;
+    color: #fff;
+    padding: 10px
+}
+
+  
+    
+
+.navbar{
+    height: 60px;
+}
