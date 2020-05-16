@@ -48,9 +48,7 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control"  required name="password"  placeholder="الرقم السري" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" required class="form-control" placeholder="تاكيد الرقم السري" value="" />
-                                        </div>
+                                     
 
 
                                     </div>
@@ -59,19 +57,12 @@
                                             <input type="text" class="form-control" name="firstName" required  placeholder="الاسم الاول" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="userName" required  placeholder="اسم المستخدم " value="" />
+                                            <input type="text" class="form-control" name="address" required  placeholder="العنوان " value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>الرجاء اختيار سؤال الامان </option>
-                                                <option>ما هو تاريخ ميلادك</option>
-                                                <option>رقمك القديم</option>
-                                                <option>شخص تحبه</option>
-                                            </select>
-                                        </div>
+                                       
                                           
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="save" placeholder="الجواب" value="" />
+                                            <input type="text" name="phone" maxlength="10" minlength="10" required class="form-control" placeholder="الرجاء ادخال رقم الهاتف" value="" />
                                         </div>
                                          <div class="form-group">
                                             <div class="maxl">

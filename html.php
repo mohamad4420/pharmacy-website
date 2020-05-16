@@ -55,18 +55,7 @@ session_start();
                         <div class="tab-content" id="myTabContent">
                             
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                <h3 class="register-heading">تسجيل الدخول </h3>
+                                    <h3 class="register-heading">تسجيل الدخول </h3>
                                 
                                    
                                
@@ -83,8 +72,7 @@ session_start();
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                          
-                                              <input type="text" class="form-control" name="userName" placeholder="اسم المستخدم او الايميل " value="" />
+                                              <input type="text" class="form-control" name="userName" placeholder="الايميل"  value="" />
                                         </div>
                                        
                                        
@@ -96,77 +84,9 @@ session_start();
                             </div>
                             
                             
-                         
+                   
                             
                             
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">التسجيل</h3>
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control"  required  name="lastName" placeholder="اسم العائله" value=""  />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control"  required name="email" placeholder="الايميل" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control"  required name="password"  placeholder="الرقم السري" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" required class="form-control" placeholder="تاكيد الرقم السري" value="" />
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="firstName" required  placeholder="الاسم الاول" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="userName" required  placeholder="اسم المستخدم " value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>الرجاء اختيار سؤال الامان </option>
-                                                <option>ما هو تاريخ ميلادك</option>
-                                                <option>رقمك القديم</option>
-                                                <option>شخص تحبه</option>
-                                            </select>
-                                        </div>
-                                          
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="save" placeholder="الجواب" value="" />
-                                        </div>
-                                         <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="mail" checked>
-                                                    <span> ذكر </span> 
-                                                </label>
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="female">
-                                                    <span>انثى </span> 
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
-                                    </div>
-                                </div>
-                            </div>
-                                
-                        
-                        </div>
-                    </div>
-                </div>
-
     </div>
 
 </body>

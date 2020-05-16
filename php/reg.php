@@ -7,8 +7,9 @@ if ($con->connect_error) {
 }
 
 
-$userName=$_POST['userName'];
+$address=$_POST['address'];
 $password=$_POST['password'];
+$phone=$_POST['phone'];
 $email=$_POST['email'];
 $firstName =$_POST['firstName'];
 $lastName=$_POST['lastName'];
@@ -17,7 +18,7 @@ $gender=$_POST['gender'];
 
 
 
-$sql ="insert into reg(userName,password,email,firstName,lastName,gender)values('$userName','$password','$email','$firstName','$lastName','$gender')";
+$sql ="insert into reg(phone,password,email,firstName,lastName,gender,address)values('$phone','$password','$email','$firstName','$lastName','$gender','$address')";
 if ($con->query($sql) === TRUE) {
   
     header('location:../html.php');

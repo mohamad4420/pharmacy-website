@@ -57,21 +57,7 @@ $idu =$_SESSION["id_user"];
         </div>
         </div>
     
-    
-    
-    
-    
-          
-          <?php
-    
-    
-    
-    
-          ?>
-          
-          
-          
-        
+  
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -106,7 +92,7 @@ $idu =$_SESSION["id_user"];
     <label class="product-line-price">المجموع</label>
   </div>
 
-        <div id="indexCart">
+      
     
              <?php
     
@@ -116,8 +102,8 @@ $idu =$_SESSION["id_user"];
              
             $p =$col['id_prodect'];
       
-                $re =$mysqli->query("select * from prodect where id=$p ") or die ($mysqli->error);
-           $row = $re->fetch_assoc();
+            $res =$mysqli->query("select * from prodect where id=$p ") or die ($mysqli->error);
+            $row = $res->fetch_assoc();
 
                      
   ?> 
@@ -127,9 +113,8 @@ $idu =$_SESSION["id_user"];
   <div class="product">
     <div class="product-image">
          <?php  
-                          echo '  <img src="../root/upload/'.$row['image'].'" alt="Image 1" >  ';
-                       
-                        
+          echo '  <img src="../root/upload/'.$row['image'].'" alt="صوره المنتج" >  ';
+                
          ?>
     </div>
     <div class="product-details">
@@ -414,8 +399,8 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
                                 <div  id="<?php echo $row['id']?>"
                                      class="btn cartt btn-success"  id="mo" >سلع التسوق</div>
                           
-                           <a href="pay.php"> <div 
-                                    class="btn payy btn-success" id="<?php echo $row['id']?>">الدفع</div></a>
+                           <div name="pay" id="<?php echo $row['id']?>"
+                                    class="btn payy btn-success" id="<?php echo $row['id']?>">الدفع</div>
                             
                             
         
