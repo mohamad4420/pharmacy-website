@@ -9,10 +9,19 @@ $row = $result->fetch_assoc();
 
 $nom=(int)$row['pay']+1;
 $mysqli->query("UPDATE prodect SET pay=$nom WHERE id=$id") or die ($mysqli->error);
-echo $nom;
+
 $mydate=getdate(date("U"));
 $date="$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year] , $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
-$result =$mysqli->query("insert into pay(userId,prodectid,date)values('$idu','$id','$date')") or die ($mysqli->error);
 
+$mysqli->query("insert into pay(userId,prodectid,date,count)values('$idu','$id','$date','1')")  ;
+
+if($mysqli->error){
+    $uro =$mysqli->query("select count from pay where userid=$idu AND prodectid=$id") or die ($mysqli->error);
+    $roe = $uro->fetch_assoc();
+    $done=(int)$roe['count']+1;
+       
+    $mysqli->query("UPDATE pay SET count=$done WHERE prodectid=$id") or die ($mysqli->error);
+}
+echo $nom;
 
 ?>

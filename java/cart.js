@@ -9,7 +9,7 @@ $('.product-quantity input').change( function() {
 
 $('.product-removal button').click( function() {
   removeItem(this);
-});
+ });
 
 
 /* Recalculate cart */
