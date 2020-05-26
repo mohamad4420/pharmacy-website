@@ -163,7 +163,7 @@ else{
                 
                 ?>
                 
-                <a href="../php/paydriver.php?delete=<?php echo $row['userid'];?>&idp=<?php echo $prodectt['id'];?>&userName=<?php echo $userr['firstName']." ".$userr['lastName'];?>&nameP=<?php echo $prodectt['name'];?>&date=<?php echo $date;?>"
+                <a href="../php/payy.php?delete=<?php echo $row['userid'];?>&idp=<?php echo $prodectt['id'];?>&userName=<?php echo $userr['firstName']." ".$userr['lastName'];?>&nameP=<?php echo $prodectt['name'];?>&date=<?php echo $date;?>"
                 class="btn btn-success " >تم التوصيل</a>
                 
                 </td>

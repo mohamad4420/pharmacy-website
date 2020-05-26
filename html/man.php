@@ -41,7 +41,7 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
 <body>
 
 <?php if(isset($_SESSION["mas"])):?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="position: sticky;top: 0;z-index: 150;" >
  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <span aria-hidden="true" id="closse">&times;</span>
 </button>
@@ -67,24 +67,23 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
                <div class="col-sm" >
             
 
-                    m1152580@gmail.com                                   
-                    m1152580@gmail.com                                   
+               m1152580@gmail.com                                   
+                                                   
             
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="#525" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>                 
-            0568760233                            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#525" width="18px" height="20px"><path d="M0 0h24v24H0z" fill="none"/><path d="M13 9h-2v2h2V9zm4 0h-2v2h2V9zm3 6.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 9v2h2V9h-2z"/></svg>
-        </div>
-        
-        <div class="col-sm">
-            
-            <span style="color:red;"><?php echo $user; ?></span> اهلا وسهلا
-            </div>
-                       
-            </div>
-              <div class="col-sm">
-            
-            مواعيد الدوام من الساعه 9صباحه الى الساعه 10 مسائا
-            
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="#525" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>                 
+                                                   0568760233                            
+                                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#525" width="18px" height="20px"><path d="M0 0h24v24H0z" fill="none"/><path d="M13 9h-2v2h2V9zm4 0h-2v2h2V9zm3 6.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 9v2h2V9h-2z"/></svg>
+                                                   </div>
+                                                                                                              
+                                                   <div class="col-sm">
+                                                                                                                  
+                                                   <span style="color:red;"><?php echo $user; ?></span> اهلا وسهلا
+                                                   </div>
+                                                                                                                             
+                                                   </div>
+                                                   <div class="col-sm">
+                                                                                                                  
+                                                   مواعيد الدوام من الساعه8 صباحا الى الساعه 10 مسائا
             </div>
           
     
@@ -397,12 +396,12 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
 
 
         
-        <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >تعديل المعلومات الشخصيه</a>
+        <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="cursor:grab;">تعديل المعلومات الشخصيه</a>
 
 <!-- Modal -->
 
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#changpassword" >تغيير الرقم السري</a>
+              <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#changpassword" style="cursor:grab;">تغيير الرقم السري</a>
          
               <div class="dropdown-divider"></div>
              
@@ -427,7 +426,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         
                 <a class="dropdown-item" href="../root/add.php">اضافه منتج </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../soldout.php">المنتجات المباعه</a>
+              <a class="dropdown-item" href="../html/soldout.php">المنتجات المباعه</a>
               <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="../root/remove.php">حذف مستخدم </a>
    

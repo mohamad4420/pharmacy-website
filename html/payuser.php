@@ -378,12 +378,12 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
 
 
         
-        <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >تعديل المعلومات الشخصيه</a>
+        <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="cursor:grab;">تعديل المعلومات الشخصيه</a>
 
 <!-- Modal -->
 
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#changpassword" >تغيير الرقم السري</a>
+              <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#changpassword" style="cursor:grab;">تغيير الرقم السري</a>
          
               <div class="dropdown-divider"></div>
              
@@ -408,7 +408,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         
                 <a class="dropdown-item" href="../root/add.php">اضافه منتج </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../soldout.php">المنتجات المباعه</a>
+              <a class="dropdown-item" href="../html/soldout.php">المنتجات المباعه</a>
               <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="../root/remove.php">حذف مستخدم </a>
    
@@ -500,7 +500,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
                 ?>
                 
                 <a href="../php/paydriver.php?delete=<?php echo $row['userid'];?>&idp=<?php echo $prodectt['id'];?>&userName=<?php echo $userr['firstName']." ".$userr['lastName'];?>&nameP=<?php echo $prodectt['name'];?>&date=<?php echo $date;?>"
-                class="btn btn-success " >تم التوصيل</a>
+                class="btn btn-danger " >حذف</a>
                 
                 </td>
         </tr>

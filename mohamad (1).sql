@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 26, 2020 at 10:05 AM
+-- Generation Time: May 26, 2020 at 11:29 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -36,13 +36,6 @@ CREATE TABLE IF NOT EXISTS `cart` (
   PRIMARY KEY (`id_prodect`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id_prodect`, `id_user`, `count`) VALUES
-('19', '26', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -57,18 +50,6 @@ CREATE TABLE IF NOT EXISTS `pay` (
   `count` varchar(250) NOT NULL,
   PRIMARY KEY (`prodectid`,`userid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pay`
---
-
-INSERT INTO `pay` (`userid`, `prodectid`, `date`, `count`) VALUES
-('26', '21', 'Tuesday, May 26, 2020 , 8:26:27', '3'),
-('26', '19', 'Tuesday, May 26, 2020 , 8:26:27', '2'),
-('26', '20', 'Tuesday, May 26, 2020 , 8:26:26', '1'),
-('23', '19', 'Tuesday, May 26, 2020 , 8:26:5', '2'),
-('23', '17', 'Tuesday, May 26, 2020 , 8:26:4', '2'),
-('23', '21', 'Tuesday, May 26, 2020 , 8:23:21', '3');
 
 -- --------------------------------------------------------
 
@@ -87,17 +68,19 @@ CREATE TABLE IF NOT EXISTS `prodect` (
   `cart` varchar(255) NOT NULL DEFAULT '0',
   `image` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `prodect`
 --
 
 INSERT INTO `prodect` (`id`, `name`, `information`, `price`, `type`, `pay`, `cart`, `image`) VALUES
-(19, 'Pampers', 'ÙÙˆØ· Ù„Ù„Ø§Ø·ÙØ§Ù„', '6.99', 'Ø§Ø·ÙØ§Ù„', '34', '60', '842077872.jpg'),
-(20, 'Lenses', 'Ù„ØªØºÙŠÙŠØ± Ù„ÙˆÙ† Ø§Ù„Ø¹ÙŠÙ†', '10.99', 'Ù†Ø³Ø§Ø¡', '49', '52', '1994364436.jpg'),
-(21, 'Nivea men', 'Ù…Ù†ØªØ¬ Ù„Ø§Ø²Ø§Ù„Ù‡ Ø§Ù„Ø¹Ø±Ù‚', '5.99', 'Ø±Ø¬Ø§Ù„', '20', '17', '242511131.jpg'),
-(17, 'Acamol', 'Ù…Ø³ÙƒÙ† Ù„Ù„Ø§Ù„Ù…', '3.3', 'Ø¯ÙˆØ§Ø¡', '8', '3', '1171386943.jpg');
+(22, 'Sanosan', 'Ø´Ø§Ù…Ø¨Ùˆ Ù„Ù„Ø§Ø·ÙØ§Ù„', '15', 'Ø§Ø·ÙØ§Ù„', '0', '0', '681762751.jpg'),
+(19, 'Pampers', 'ÙÙˆØ· Ù„Ù„Ø§Ø·ÙØ§Ù„', '6.99', 'Ø§Ø·ÙØ§Ù„', '34', '62', '842077872.jpg'),
+(20, 'Lenses', 'Ù„ØªØºÙŠÙŠØ± Ù„ÙˆÙ† Ø§Ù„Ø¹ÙŠÙ†', '10.99', 'Ù†Ø³Ø§Ø¡', '61', '53', '1994364436.jpg'),
+(21, 'Nivea men', 'Ù…Ù†ØªØ¬ Ù„Ø§Ø²Ø§Ù„Ù‡ Ø§Ù„Ø¹Ø±Ù‚', '5.99', 'Ø±Ø¬Ø§Ù„', '32', '17', '242511131.jpg'),
+(23, 'ANTIHAIR LOSS', 'Ù…Ù†ØªØ¬ Ù„Ø§ÙŠÙ‚Ø§Ù ØªØ³Ø§Ù‚Ø· Ø§Ù„Ø´Ø¹Ø±', '55', 'ØªØ¬Ù…ÙŠÙ„', '0', '0', '1071548220.png'),
+(17, 'Acamol', 'Ù…Ø³ÙƒÙ† Ù„Ù„Ø§Ù„Ù…', '3.3', 'Ø¯ÙˆØ§Ø¡', '10', '3', '1171386943.jpg');
 
 -- --------------------------------------------------------
 
@@ -125,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `reg` (
 --
 
 INSERT INTO `reg` (`address`, `password`, `email`, `firstName`, `lastName`, `noCart`, `gender`, `id`, `phone`, `what`) VALUES
-('aljeep', '0568760233', 'aser_alhob2@hotmail.com', 'mohamad', 'abudaya', '1', 'mail', 26, '0568760233', 'user'),
+('aljeep', '0568760233', 'aser_alhob2@hotmail.com', 'mohamad', 'abudaya', '0', 'mail', 26, '0568760233', 'user'),
 ('jarusalem/aljeep', '1234', 'root', 'Ø§Ù„Ø±Ø¦ÙŠØ³', 'Ø±Ø§Ù…ÙŠ', '0', 'mail', 23, '0568760233', 'admin'),
 ('ramallah/is', '0568760233', 'm1152580@gmail.com', 'abudaya', 'mohamad', '0', 'mail', 25, '0568760233', 'driver'),
 ('Ø§Ù„Ø¬ÙŠØ¨', '1', 'm@g.com', 'Ù…Ø­Ù…Ø¯', 'Ø§Ø¨ÙˆØ¯ÙŠÙ‡', '0', 'mail', 27, '0568760233', 'user'),
@@ -144,29 +127,7 @@ CREATE TABLE IF NOT EXISTS `soldout` (
   `namep` varchar(250) NOT NULL,
   `date` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `soldout`
---
-
-INSERT INTO `soldout` (`id`, `name`, `namep`, `date`) VALUES
-(101, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Pampers', 'Friday, May 22, 2020 , 19:39:48'),
-(102, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Trofen', 'Friday, May 22, 2020 , 19:43:58'),
-(103, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Pampers', 'Friday, May 22, 2020 , 19:43:59'),
-(104, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Nivea men', 'Saturday, May 23, 2020 , 18:22:7'),
-(105, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Nivea men', 'Saturday, May 23, 2020 , 18:42:18'),
-(106, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Acamol', 'Saturday, May 23, 2020 , 18:44:48'),
-(107, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Lenses', 'Saturday, May 23, 2020 , 18:44:52'),
-(110, 'mohamad abudaya', 'Nivea men', 'Tuesday, May 26, 2020 , 8:19:35'),
-(109, 'Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ø­Ù…Ø¯', 'Pampers', 'Saturday, May 23, 2020 , 18:44:53'),
-(111, 'Ø§Ù„Ø±Ø¦ÙŠØ³ Ø±Ø§Ù…ÙŠ', 'Acamol', 'Tuesday, May 26, 2020 , 8:19:37'),
-(112, 'Ø§Ù„Ø±Ø¦ÙŠØ³ Ø±Ø§Ù…ÙŠ', 'Pampers', 'Tuesday, May 26, 2020 , 8:19:37'),
-(113, 'Ø§Ù„Ø±Ø¦ÙŠØ³ Ø±Ø§Ù…ÙŠ', 'Lenses', 'Tuesday, May 26, 2020 , 8:19:37'),
-(114, 'Ø§Ù„Ø±Ø¦ÙŠØ³ Ø±Ø§Ù…ÙŠ', 'Nivea men', 'Tuesday, May 26, 2020 , 8:19:37'),
-(115, 'mohamad abudaya', 'Lenses', 'Tuesday, May 26, 2020 , 8:19:38'),
-(116, 'mohamad abudaya', 'Pampers', 'Tuesday, May 26, 2020 , 8:19:38'),
-(117, 'mohamad abudaya', 'Acamol', 'Tuesday, May 26, 2020 , 8:19:38');
+) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

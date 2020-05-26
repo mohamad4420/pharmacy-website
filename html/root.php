@@ -40,8 +40,11 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
    
 <body>
 
+
 <?php if(isset($_SESSION["mas"])):?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="alert alert-warning alert-dismissible fade show" style="position: sticky;top: 0;z-index: 150;" 
+
+ role="alert">
  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <span aria-hidden="true" id="closse">&times;</span>
 </button>
@@ -68,7 +71,7 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
             
 
                     m1152580@gmail.com                                   
-                    m1152580@gmail.com                                   
+                                                   
             
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="#525" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>                 
             0568760233                            
@@ -83,7 +86,7 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
             </div>
               <div class="col-sm">
             
-            مواعيد الدوام من الساعه 9صباحه الى الساعه 10 مسائا
+            مواعيد الدوام من الساعه8 صباحا الى الساعه 10 مسائا
             
             </div>
           
@@ -397,12 +400,12 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
 
 
         
-        <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >تعديل المعلومات الشخصيه</a>
+        <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="cursor:grab;">تعديل المعلومات الشخصيه</a>
 
 <!-- Modal -->
 
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#changpassword" >تغيير الرقم السري</a>
+              <a class="dropdown-item" class="btn btn-primary" data-toggle="modal" data-target="#changpassword" style="cursor:grab;" >تغيير الرقم السري</a>
          
               <div class="dropdown-divider"></div>
              
@@ -427,7 +430,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         
                 <a class="dropdown-item" href="../root/add.php">اضافه منتج </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../soldout.php">المنتجات المباعه</a>
+              <a class="dropdown-item" href="../html/soldout.php">المنتجات المباعه</a>
               <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="../root/remove.php">حذف مستخدم </a>
    

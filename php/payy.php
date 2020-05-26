@@ -9,5 +9,5 @@ $result =$mysqli->query("insert into soldout(name,namep,date)values('$userName',
 echo $id;
 echo $idp;
 $mysqli->query("DELETE FROM pay where userid = $id and prodectid=$idp")or die ($mysqli->error());
-header('location:../html/payuser.php');
+header('location:../html/driver.php');
 ?>
