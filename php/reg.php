@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 
 $con = new mysqli('localhost','root','','mohamad');
 // Check connection
@@ -18,12 +20,13 @@ $gender=$_POST['gender'];
 
 
 
-$sql ="insert into reg(phone,password,email,firstName,lastName,gender,address)values('$phone','$password','$email','$firstName','$lastName','$gender','$address')";
+$sql ="insert into reg(phone,password,email,firstName,lastName,gender,address,what)values('$phone','$password','$email','$firstName','$lastName','$gender','$address','user')";
 if ($con->query($sql) === TRUE) {
-  
+    $_SESSION["massg"]= "تم التسجيل الرجاء ادخال الايميل والرقم للدخول الى الحساب الخاص بك ";
     header('location:../html.php');
 } else {
-   echo "the email and user name already exsist ";
+    $_SESSION["massg"]= "الايميل المستخدم موجود بقاعده بياناتنا الرجاء تسجيل الدخول ";
+    header('location:../html.php');
 }
 
 

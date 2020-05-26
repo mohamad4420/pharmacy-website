@@ -39,26 +39,7 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
 </head>
    
 <body>
-
-<?php if(isset($_SESSION["mas"])):?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true" id="closse">&times;</span>
-</button>
-    <?php
-    if(isset($_SESSION["mas"])){
-        echo $_SESSION["mas"];
-    } 
-  ?>
-</div>
     
-    <?php endif; ?>
-
-
-
-
-
-
     <div class="upper-bar position-sticky">
     
     <div class="container">
@@ -261,7 +242,7 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
     </div>
   </div>
       
-     <button class="checkout">الشراء</button>
+     ><button class="checkout">الشراء</button>
 
 </div>
         
@@ -458,7 +439,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         <a class="nav-link" href="./med.php" id="mn">قسم الادويه
 </a>
       </li>
-      <li class="nav-item active font-weight-bold" >
+      <li class="nav-item " >
         <a class="nav-link" style="color:red;" href="./root.php" id="mn"> الصفحه الرئيسيه
 </a>
       </li>
@@ -466,133 +447,79 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         </div>
     </div>
     </nav>
-    <br>     
-    <div class="d-flex flex-row-reverse">
-
-    <form action="./search.php"  method="GET" class="form-inline" style="float: right;"  >
- 
-  <div class="form-group mx-sm-3 mb-2">
-    <input type="text" name="search" class="form-control " id="inputPassword2" placeholder="البحث">
-  </div>
-  <button type="submit" class="btn btn-outline-danger mb-2">البحث</button>
-</form>
-    </div>
+    <br> <br> 
     
     
-    
-    <div class="body">
-    
-    <?PHP 
-        
-         
-    
-    $result =$mysqli->query("select * from prodect") or die ($mysqli->error);
-    ?>
-    
-       
-        
-        
-        
-    
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-
-<div class="container-fluid" >
-        <div class="row">
-          
-            
-            
-
-        
-
-   <?php 
-        while($row = $result->fetch_assoc()):
-        
-        ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="tile">
-                    <div class="wrapper">
-                        <div class="header"><?php echo $row['name'];?></div>
-
-                        <div class="banner-img">
-                            
-                            <?php  
-                          echo '  <img src="../root/upload/'.$row['image'].'" alt="Image 1" height="340" >  ';
-                       
-                        
-                            ?>
-                         
-                        </div>
-                       
-                        <div class="dates">
-                            <div class="start">
-                                <strong>النوع</strong><?php echo $row['type'];?>
-                               
-                            </div>
-                            <div class="ends">
-                                <strong>معلومات عن المنتج</strong> <?php echo $row['information'];?>
-                            </div>
-                        </div>
-
-                    
-                        <div class="stats">
-
-                            <div >
-                                <strong>الشراء</strong> <span id="p<?php echo $row['id']?>"><?php echo $row['pay'];?></span>
-                            </div>
-
-                            <div>
-                                <strong>سله المشتريات</strong> <span id="c<?php echo $row['id']?>"><?php echo $row['cart'];?></span>
-                            </div>
-
-                            <div>
-                                <strong>السعر</strong> $<?php echo $row['price'];?>
-                            </div>
-
-                        </div>
-
-                        <div class="footer">
-                            
-                                                                                    
-                                <div  id="<?php echo $row['id']?>"
-                                     class="btn cartt  btn-success"  id="mo" >سلع التسوق</div>
-                          
-                           <div name="pay" id="<?php echo $row['id']?>"
-                                    class="btn payy  btn-success" id="<?php echo $row['id']?>">الدفع</div>
-                            
-                            
-        
-                        </div>
-                    </div>
-                </div> 
-            </div>
-                <?php endwhile;?>
-            
-            
-            
-            
-        </div>
-    </div>
-        
-               
 
   
-        
-        
+    <div class="row justify-conter-center" style="background-color: aliceblue;margin-top:20px;width:90%;margin-left:5%;">
+    <table class="table">
+        <thead>
+        <tr>
+        <th>الاسم</th>
+        <th>العنوان</th>
+        <th>رقم الهاتف</th>  
+        <th>اسم المنج</th> 
+        <th>صوره للمنتج</th>
+        <th>تاريخ الطلب</th> 
+        <th>السعر المطلوب</th>
+        <th>الكميه</th> 
+            <th colspan="2">Action</th>
+        </tr>
+            </thead>
+            <?php 
+        $mysqli =new mysqli('localhost','root','','mohamad') or die(mysqli_error($mysqli));
     
+        $result =$mysqli->query("select * from pay where userid=$idu") or die ($mysqli->error);
+        while($row = $result->fetch_assoc()):
+            $idu=$row['userid'];
+            $idp=$row['prodectid'];
+            $res =$mysqli->query("select * from reg where id=$idu") or die ($mysqli->error);
+            $userr = $res->fetch_assoc();
+            $re =$mysqli->query("select * from prodect where id=$idp") or die ($mysqli->error);
+            $prodectt = $re->fetch_assoc();
+          
+        
+        ?>
+        <tr>
+        <td> <?php echo $userr['firstName'] ." ".$userr['lastName'];?></td>
+             <td> <?php echo $userr['address'];?></td>
+             <td> <?php echo $userr['phone'];?></td>
+             <td> <?php echo $prodectt['name'];?></td>
+             <td>  <?php echo '  <img src="../root/upload/'.$prodectt['image'].'" alt="Image 1" height="40" >  ';?></td>
+             <td> <?php echo $row['date'];?></td>
+             <td> <?php echo (float)$row['count']*(float)$prodectt['price']."$";?></td>
+             <td> <?php echo $row['count'];?></td>
+            
+            <td> 
+                
+                <?php 
+                $mydate=getdate(date("U"));
+                $date="$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year] , $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
+                
+                ?>
+                
+                <a href="../php/paydriver.php?delete=<?php echo $row['userid'];?>&idp=<?php echo $prodectt['id'];?>&userName=<?php echo $userr['firstName']." ".$userr['lastName'];?>&nameP=<?php echo $prodectt['name'];?>&date=<?php echo $date;?>"
+                class="btn btn-success " >تم التوصيل</a>
+                
+                </td>
+        </tr>
+        <?php endwhile;?>
+            </table>
     </div>
+    
+
+    
+    
+    
+    
+   
 <div class="footer">
 </div>
     <div id="what">0</div>
       <script>
       $(document).ready(function(){
-        
   $(".cartt").click(function(){
-   
     document.getElementById("what").innerHTML="1";
     var coount= document.getElementById("number").innerHTML;
     var integer = parseInt(coount, 10);
@@ -625,21 +552,16 @@ var a ='c'.concat(idp);
       
       </script>
     
-    <script src="../java/phppay.js"></script>
+    <script src="../java/phpcart.js"></script>
    <script src="../java/cart.js"></script>
 <script>
  $(document).ready(function(){
 
   
 
-  $("#closse").on('click', function(){
-<?php  unset($_SESSION['mas']); ?>
-  });
- 
-  
   $(".checkout").on('click', function(){
 			
-		
+			
   
   $.ajax({
 	  url:"../php/oncart.php",
@@ -693,23 +615,23 @@ var a ='c'.concat(idp);
   <div class="form-group row">
   
     <div class="col-sm-8">
-      <input type="text" id="in1" required="true" name="firstName" class="form-control" id="inputPassword" value="<?php echo $_SESSION["firstName"];?>" >
+      <input type="text" required="true" name="firstName" class="form-control" id="inputPassword" value=<?php echo $_SESSION["firstName"];?> >
     </div>
     <label for="inputPassword" class="col-sm-4 col-form-label">الاسم الاول</label>
     
     <div class="col-sm-8">
-      <input type="text" id="in2" required="true" name="lastName" class="form-control" id="inputPassword" value="<?php echo $_SESSION["lastName"];?>">
+      <input type="text" required="true" name="lastName" class="form-control" id="inputPassword" value=<?php echo $_SESSION["lastName"];?>>
     </div>
     <label for="inputPassword" class="col-sm-4 col-form-label">الاسم الاخير</label>
    
     <div class="col-sm-8">
-      <input type="text" id="in3" required="true" name="address" class="form-control" id="inputPassword" value="<?php echo $_SESSION["address"];?>">
+      <input type="text" required="true" name="address" class="form-control" id="inputPassword" value=<?php echo $_SESSION["address"];?>>
     </div>
-
     <label for="inputPassword" class="col-sm-4 col-form-label">العنوان</label>
     
     <div class="col-sm-8">
-      <input type="text" id="in4" required="true" name="phone" class="form-control" id="inputPassword" value="<?php echo $_SESSION["phone"];?>">    </div>
+      <input type="text" required="true" name="phone" class="form-control" id="inputPassword" value=<?php echo $_SESSION["phone"];?>>
+    </div>
     <label for="inputPassword" class="col-sm-4 col-form-label">رقم الهاتف</label>
   </div>
 

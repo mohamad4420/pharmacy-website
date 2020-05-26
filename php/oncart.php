@@ -36,7 +36,7 @@ $done=(int)$roe['count']+(int)$count;
 
 
 
-
+$_SESSION['mas']="تم الشراء شكرا لك سيتم الاتصال بك باقرب وقت نتمنا لك عيدا سعيدا"; 
 $result =$mysqli->query("DELETE FROM cart WHERE id_user=$idu") or die ($mysqli->error);
 
 

@@ -89,11 +89,11 @@
     <table class="table">
         <thead>
         <tr>
-        <th>username</th>
-        <th>password</th>
-        <th>email</th>  
         <th>firstname</th> 
         <th>lastname</th>
+        <th>password</th>
+        <th>email</th>  
+       
         <th>gender</th> 
             <th colspan="2">Action</th>
         </tr>
@@ -103,11 +103,11 @@
         
         ?>
         <tr>
-        <td> <?php echo $row['userName'];?></td>
+        <td> <?php echo $row['firstName'];?></td>
+             <td> <?php echo $row['lastName'];?></td>
              <td> <?php echo $row['password'];?></td>
              <td> <?php echo $row['email'];?></td>
-             <td> <?php echo $row['firstName'];?></td>
-             <td> <?php echo $row['lastName'];?></td>
+            
              <td> <?php echo $row['gender'];?></td>
             <td> 
                 

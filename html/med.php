@@ -20,7 +20,7 @@ $user=$_SESSION["firstName"]."  ".$_SESSION["lastName"];
 <html>
 <head>
     
-<title>الصفحه الرئيسيه</title>
+<title>قسم الادويه</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -438,7 +438,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
       </li>
       <?php endif;?>
       
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="./child.php" id="mn">قسم الاطفال
 </a>
       </li>
@@ -454,11 +454,11 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         <a class="nav-link" href="lenses.php" id="mn">قسم التجميل
 </a>
       </li>
-            <li class="nav-item">
+            <li class="nav-item active">
         <a class="nav-link" href="./med.php" id="mn">قسم الادويه
 </a>
       </li>
-      <li class="nav-item active font-weight-bold" >
+      <li class="nav-item active" >
         <a class="nav-link" style="color:red;" href="./root.php" id="mn"> الصفحه الرئيسيه
 </a>
       </li>
@@ -486,7 +486,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         
          
     
-    $result =$mysqli->query("select * from prodect") or die ($mysqli->error);
+    $result =$mysqli->query("select * from prodect where type='دواء'") or die ($mysqli->error);
     ?>
     
        

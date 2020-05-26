@@ -1,3 +1,17 @@
+<?php 
+session_start();
+if(isset($_SESSION["sign"])){
+
+}
+ 
+
+else{
+  $_SESSION["massg"]= "الرجاء تسجيل الدخول اولا";
+   header('location:../html.php'); 
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +28,7 @@
    
     
 </head>
+
     <style>
         a{
             border: none;
@@ -21,6 +36,20 @@
     </style>
 <body>
   
+<?php if(isset($_SESSION["mas"])):?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true" id="closse">&times;</span>
+</button>
+    <?php
+    if(isset($_SESSION["mas"])){
+        echo $_SESSION["mas"];
+    } 
+  ?>
+</div>
+    
+    <?php endif; ?>
+    
          <div class="upper-bar position-sticky">
     
     <div class="container">
@@ -47,6 +76,9 @@
         </div>
         </div>
     
+
+
+
     
      <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -63,11 +95,13 @@
                 <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">التحكم <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="./soldout.php">المنتجات المباعه </a></li>
+          <li><a href="#" data-toggle="modal" data-target="#exampleModal">تغيير المعلومات الشخصيه</a></li>
+          <li role="separator" class="divider"></li>
+
+            <li><a href="#" data-toggle="modal" data-target="#changpassword">تغيير كلمه المرور</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">تغيير كلمه المرور</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="../html.php">تسجيل الخروج</a></li>
+            
+            <li><a href="../php/end.php">تسجيل الخروج</a></li>
           </ul>
         </li>
 
@@ -92,6 +126,8 @@
         <th>اسم المنج</th> 
         <th>صوره للمنتج</th>
         <th>تاريخ الطلب</th> 
+        <th>السعر المطلوب</th>
+        <th>الكميه</th> 
             <th colspan="2">Action</th>
         </tr>
             </thead>
@@ -99,7 +135,7 @@
         $mysqli =new mysqli('localhost','root','','mohamad') or die(mysqli_error($mysqli));
     
         $result =$mysqli->query("select * from pay") or die ($mysqli->error);
-        while($row = $result->fetch_assoc()):
+                while($row = $result->fetch_assoc()):
             $idu=$row['userid'];
             $idp=$row['prodectid'];
             $res =$mysqli->query("select * from reg where id=$idu") or die ($mysqli->error);
@@ -116,6 +152,9 @@
              <td> <?php echo $prodectt['name'];?></td>
              <td>  <?php echo '  <img src="../root/upload/'.$prodectt['image'].'" alt="Image 1" height="40" >  ';?></td>
              <td> <?php echo $row['date'];?></td>
+             <td> <?php echo (float)$row['count']*(float)$prodectt['price']."$";?></td>
+             <td> <?php echo $row['count'];?></td>
+            
             <td> 
                 
                 <?php 
@@ -123,7 +162,8 @@
                 $date="$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year] , $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
                 
                 ?>
-                <a href="../php/paydriver.php?delete=<?php echo $row['id'];?>&userName=<?php echo $userr['firstName']." ".$userr['lastName'];?>&nameP=<?php echo $prodectt['name'];?>&date=<?php echo $date;?>"
+                
+                <a href="../php/paydriver.php?delete=<?php echo $row['userid'];?>&idp=<?php echo $prodectt['id'];?>&userName=<?php echo $userr['firstName']." ".$userr['lastName'];?>&nameP=<?php echo $prodectt['name'];?>&date=<?php echo $date;?>"
                 class="btn btn-success " >تم التوصيل</a>
                 
                 </td>
@@ -133,10 +173,89 @@
     </div>
     
     
+    <div class="modal fade" id="changpassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">الرقم السري </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="../php/changpasswod.php"  method="POST">
+  
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-4 col-form-label">new password</label>
+    <div class="col-sm-8">
+      <input type="password" required="true" name="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+
+
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+   <button type="submit" class="btn btn-primary">Save changes</button>
+</form>
+      </div>
+    
+        
+     
+    </div>
+  </div>
+</div>
+
     
     
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">تغيير المعلومات الشخصيه</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+
+      <form action="../php/changinfo.php"  method="POST">
+  
+  <div class="form-group row">
+  
+    <div class="col-sm-8">
+      <input type="text" id="in1" required="true" name="firstName" class="form-control" id="inputPassword" value="<?php echo $_SESSION["firstName"];?>" >
+    </div>
+    <label for="inputPassword" class="col-sm-4 col-form-label">الاسم الاول</label>
     
+    <div class="col-sm-8">
+      <input type="text" id="in2" required="true" name="lastName" class="form-control" id="inputPassword" value="<?php echo $_SESSION["lastName"];?>">
+    </div>
+    <label for="inputPassword" class="col-sm-4 col-form-label">الاسم الاخير</label>
+   
+    <div class="col-sm-8">
+      <input type="text" id="in3" required="true" name="address" class="form-control" id="inputPassword" value="<?php echo $_SESSION["address"];?>">
+    </div>
+
+    <label for="inputPassword" class="col-sm-4 col-form-label">العنوان</label>
     
+    <div class="col-sm-8">
+      <input type="text" id="in4" required="true" name="phone" class="form-control" id="inputPassword" value="<?php echo $_SESSION["phone"];?>">    </div>
+    <label for="inputPassword" class="col-sm-4 col-form-label">رقم الهاتف</label>
+  </div>
+
+
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+   <button type="submit" class="btn btn-primary">Save changes</button>
+</form>
+
+
+
+      </div>
+     </div>
+  </div>
+</div>
+
     
 </body>
 </html>

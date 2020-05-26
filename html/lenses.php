@@ -450,7 +450,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         <a class="nav-link" href="women.php" id="mn">قسم النساء
 </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="lenses.php" id="mn">قسم التجميل
 </a>
       </li>
@@ -458,7 +458,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         <a class="nav-link" href="./med.php" id="mn">قسم الادويه
 </a>
       </li>
-      <li class="nav-item active font-weight-bold" >
+      <li class="nav-item active" >
         <a class="nav-link" style="color:red;" href="./root.php" id="mn"> الصفحه الرئيسيه
 </a>
       </li>
@@ -486,7 +486,7 @@ style=" fill:#000000;"><defs><linearGradient x1="113" y1="28.25" x2="113" y2="19
         
          
     
-    $result =$mysqli->query("select * from prodect") or die ($mysqli->error);
+    $result =$mysqli->query("select * from prodect where type='تجميل'") or die ($mysqli->error);
     ?>
     
        

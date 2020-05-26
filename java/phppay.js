@@ -6,7 +6,7 @@
          
          $(".payy").on('click', function(){
           		var idp = $(this).attr("id");
-                  
+                
         var jsonn ={'idp':idp};
 		$.ajax({
 			url:"../php/phppay.php",
@@ -19,7 +19,8 @@
 	   
      var a ='p'.concat(idp);
                
-        document.getElementById(a).innerHTML = data;  
+		document.getElementById(a).innerHTML = data;  
+		location.reload();
 			}
 		})
 	});

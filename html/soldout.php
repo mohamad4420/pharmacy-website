@@ -100,6 +100,7 @@
                 <?php 
                 $mydate=getdate(date("U"));
                 $date="$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year] , $mydate[hours]:$mydate[minutes]:$mydate[seconds]";
+                echo $row['id'];
                 ?>
                 <a href="../php/phpsold.php?id=<?php echo $row['id'];?>" class="btn btn-success " >الحذف</a>
                 
